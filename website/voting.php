@@ -56,9 +56,9 @@ $is_open = read_raceinfo('balloting', 'closed') == 'open';
   height: 60px;
   object-fit: cover;
 }
-.voting-section {
+/* .voting-section {
   max-width: 800px;
-}
+} */
 @media (max-width: 768px) {
   .racer-photo { height: 100px; }
   .selection-thumbnail { width: 50px; height: 50px; }
@@ -164,7 +164,7 @@ foreach ($db->query($sql) as $rs) {
           $awards = all_awards(false);
           mark_award_eligibility($awards);
           foreach ($awards as $award) {
-            echo "<div class='col-12 col-md-6'>";
+            echo "<div class='col-12 col-md-3'>";
             echo "<div class='card award-card d-none h-100' data-awardid='$award[awardid]'";
             if ($award['classid'] != 0) {
               echo " data-classid='$award[classid]'";
@@ -208,7 +208,9 @@ foreach ($db->query($sql) as $rs) {
           Choose up to <span id="racer_view_max_votes" class="badge bg-light text-dark">0</span> for 
           <span id="racer_view_award_name">Award Name</span>
         </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle me-1"></i>Close
+        </button>
       </div>
       <div class="modal-body">
         <div id="selected_racers" class="mb-3">
