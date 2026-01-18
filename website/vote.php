@@ -22,6 +22,7 @@ $is_open = read_raceinfo('balloting', 'closed') == 'open';
     <title>Award Ballot</title>
     <!-- Bootstrap 5 CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
@@ -91,11 +92,11 @@ $is_open = read_raceinfo('balloting', 'closed') == 'open';
         let g_ballot;
         let g_awardid;
         let g_racerid;
-        <?php if ($is_open) { ?>
-            document.addEventListener('DOMContentLoaded', function () {
+    <?php if ($is_open) { ?>
+        document.addEventListener('DOMContentLoaded', function () {
                 get_ballot();
             });
-        <?php } ?>
+    <?php } ?>
     </script>
     <?php require('inc/stylesheet.inc'); ?>
 </head>
@@ -374,8 +375,8 @@ $is_open = read_raceinfo('balloting', 'closed') == 'open';
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Event listeners for modals
-        const allRacersModal = document.getElementById('racers_modal');
+    // Event listeners for modals
+    const allRacersModal = document.getElementById('racers_modal');
         if (allRacersModal) {
             allRacersModal.addEventListener('show.bs.modal', event => {
                 // card that triggered the modal
